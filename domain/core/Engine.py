@@ -1,17 +1,23 @@
+from IEngine import IEngine
 
-class IAdaptor():
+
+class Engine(IEngine):
+    def __init__(self, port, adaptor):
+        self.port = port
+        self.adaptor = adaptor
+        
     def send_to_port(self):
         """This allows a mediator to send contents of a call to a port"""
-        pass
+        self.port.send_to_port(self)
     
     def get_from_port(self):
         """This allows a mediator to get data from a port"""
-        pass
+        self.port.get_from_port(self)
     
     def send_to_adaptor(self):
         """This allows a mediator to send contents of a call to an adaptor"""
-        pass
+        self.adaptor.send_to_adaptor(self)
     
     def get_from_adaptor(self):
         """This allows a mediator to get contents of a call from an adaptor"""
-        pass
+        self.adaptor.get_from_adaptor(self)

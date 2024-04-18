@@ -1,11 +1,12 @@
 from fastapi import FastAPI
-
-
+from domain.core.Engine import Engine
 
 
 def main():
     
     app = FastAPI()
+    
+    mediator = Engine()
     
     @app.get("/")
     def index():
