@@ -1,4 +1,9 @@
 
+"""
+In our first set of prototypes, the interfaces for the engine, the port and adaptor are very similar.
+Future revisions might elect to reduce this down to as few as one or two.
+"""
+
 class IPort():
     def send_to_port(self):
         """This allows a mediator to send contents of a call to a port"""
