@@ -1,0 +1,93 @@
+{
+    "Get_Employee": {
+      "Description": "Retrieves an employee record by ID",
+      "Request": {
+        "Parameters": {
+          "worker_id": {
+            "Type": "String",
+            "Description": "Unique identifier of the employee"
+          }
+        }
+      },
+      "Response": {
+        "Properties": {
+          "id": {
+            "Type": "String",
+            "Description": "Unique identifier of the employee"
+          },
+          "first_name": {
+            "Type": "String",
+            "Description": "Employee's first name"
+          },
+          "last_name": {
+            "Type": "String",
+            "Description": "Employee's last name"
+          },
+          "email": {
+            "Type": "String",
+            "Description": "Employee's email address"
+          },
+          "department": {
+            "Type": "Object",
+            "Description": "Department information"
+          },
+          "manager_id": {
+            "Type": "String",
+            "Description": "ID of the employee's manager"
+          },
+          "hire_date": {
+            "Type": "String",
+            "Description": "Employee's hire date"
+          },
+          "title": {
+            "Type": "String",
+            "Description": "Employee's job title"
+          },
+          "supervisor_name": {
+            "Type": "String",
+            "Description": "Employee's manager's name (optional)"
+          }
+        }
+      }
+    },
+    "Create_Leave_Request": {
+      "Description": "Creates a leave request for an employee",
+      "Request": {
+        "Parameters": {
+          "employee_id": {
+            "Type": "String",
+            "Description": "Unique identifier of the employee"
+          },
+          "leave_type": {
+            "Type": "String",
+            "Description": "Type of leave being requested"
+          },
+          "start_date": {
+            "Type": "String",
+            "Description": "Start date of the leave"
+          },
+          "end_date": {
+            "Type": "String",
+            "Description": "End date of the leave"
+          },
+          "reason": {
+            "Type": "String",
+            "Description": "Reason for the leave request (optional)"
+          }
+        }
+      },
+      "Response": {
+        "Properties": {
+          "request_id": {
+            "Type": "String",
+            "Description": "Unique identifier of the leave request"
+          },
+          "status": {
+            "Type": "String",
+            "Description": "Status of the leave request (e.g., pending, approved, denied)"
+          }
+        }
+      }
+    }
+  }
+  

@@ -1,0 +1,47 @@
+{
+    "Employee_Search": {
+      "Description": "Searches for employees based on various criteria",
+      "Request": {
+        "Parameters": {
+          "first_name": {
+            "Type": "String",
+            "Description": "Employee's first name (optional)"
+          },
+          "last_name": {
+            "Type": "String",
+            "Description": "Employee's last name (optional)"
+          },
+          "department": {
+            "Type": "String",
+            "Description": "Department name (optional)"
+          },
+          "skills": {
+            "Type": "Array<String>",
+            "Description": "List of skills to search for (optional)"
+          }
+        }
+      },
+      "Response": {
+        "Properties": {
+          "employees": {
+            "Type": "Array<Object>",
+            "Description": "Array of employee objects matching the search criteria"
+          }
+        },
+        "Each Employee Object": {
+          "employee_id": {
+            "Type": "String",
+            "Description": "Unique identifier of the employee"
+          },
+          "name": {
+            "Type": "String",
+            "Description": "Employee's full name"
+          },
+          "department": {
+            "Type": "String",
+            "Description": "Employee's department"
+          }
+        }
+    }
+}
+}  
