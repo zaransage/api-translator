@@ -20,17 +20,17 @@ method to pass data to mediator; why is this needed ......
 class APIOne():
     
     payload : str
+    email : dict
+       
     
-    def __init__(self):
-        pass    
-    
-    def parse_data_to_params(self):
+    def parse_data_to_params(self, params):
         pass
     
     
     def ask_api_something(self):
         with open('/home/dmarble/git/api-translator/static/api_one.json', 'r') as f:
            self.payload = json.loads(f.read())
+    
     
     def tell_api_something(self):
         pass
@@ -39,6 +39,9 @@ class APIOne():
     def send_data_to_mediator(self):
         pass
     
+    
+    def send_params(self, payload):
+        return self.payload
     
     def __str__(self):
         return f"{self.payload['Get_Employee']['Response']['Properties']['id']}"
@@ -87,4 +90,8 @@ method to pass to mediator?
 if __name__ == '__main__':
     a = APIOne()
     a.ask_api_something()
-    print(a)
+    
+    b = APIOne()
+    b.parse_data_to_params(a.send_params())
+    
+    print(b)
