@@ -1,0 +1,1 @@
+# Use this to write classes to talk to your 'left hand' service.
