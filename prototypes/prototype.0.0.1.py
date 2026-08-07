@@ -1,3 +1,4 @@
+import os
 from  dataclasses import dataclass
 import json
 
@@ -45,7 +46,7 @@ class APIOne():
     def get_from_my_service(self, payload: json):
         """request.get()"""
         
-        with open('/home/dmarble/git/api-translator/static/api_one.json', 'r') as f:
+        with open(os.path.join(os.path.dirname(__file__), '..', 'static', 'api_one.json'), 'r') as f:
            self.payload = json.loads(f.read())
     
     
@@ -77,7 +78,7 @@ class APITwo():
     def get_from_my_service(self, payload: json):
         """request.get()"""
         
-        with open('/home/dmarble/git/api-translator/static/api_two.json', 'r') as f:
+        with open(os.path.join(os.path.dirname(__file__), '..', 'static', 'api_two.json'), 'r') as f:
            self.payload = json.loads(f.read())
     
     
